@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.display-none {
+  @apply hidden;
+}
+
+.linky {
+  @apply mx-3 mt-4 sm:text-2xl;
+}
+.linky:dark {
+  @apply text-slate-800;
+}
+
+.bareJaune {
+  @apply w-1/2 text-r  border-r-4  border-yellow-400;
+}
+
+@layer components {
+  .input {
+    @applay w-1/2 p-1 bg-zinc-700  text-white  border border-zinc-600;
+  }
+  .input:dark {
+    @apply text-pink-400;
+  }
+}
