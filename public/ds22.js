@@ -8,11 +8,15 @@ const finalMidDist = document.getElementById("final-mid");
 const optInitialForeSelect = document.getElementById("opt-initial-fore");
 const optInitialAftSelect = document.getElementById("opt-initial-aft");
 const optInitialMidSelect = document.getElementById("opt-initial-mid");
+const optFinalForeSelect = document.getElementById("opt-final-fore");
+const optFinalAftSelect = document.getElementById("opt-final-aft");
+const optFinalMidSelect = document.getElementById("opt-final-mid");
 
 // Le LBP : length between perpendiculars  et le LBM : length between marks
 const lbp = document.getElementById("lbp");
 const lbpValue = document.getElementById("lbp").value;
 
+const initialLbm = document.getElementById("initial-lbm");
 const finalLbm = document.getElementById("final-lbm");
 
 // Calculate draft means: moyennes des drafts observés:

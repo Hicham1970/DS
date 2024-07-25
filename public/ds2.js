@@ -8,10 +8,14 @@ const finalMidDist = document.getElementById("final-mid");
 const optInitialForeSelect = document.getElementById("opt-initial-fore");
 const optInitialAftSelect = document.getElementById("opt-initial-aft");
 const optInitialMidSelect = document.getElementById("opt-initial-mid");
+const optFinalForeSelect = document.getElementById("opt-final-fore");
+const optFinalAftSelect = document.getElementById("opt-final-aft");
+const optFinalMidSelect = document.getElementById("opt-final-mid");
+
 /**Le LBP et le LBM */
 const lbp = document.getElementById("lbp");
 const lbpValue = document.getElementById("lbp").value;
-const finalLbm = document.getElementById("final-lbm");
+// const finalLbm = document.getElementById("final-lbm");
 
 // add an eventListener sur le click du btn btnCalc:
 
@@ -71,6 +75,7 @@ function calculerMoyenneDrafts() {
   console.log(`Final Draft Mid Port : ${finalDraftMidPort}`);
   console.log(`Final Draft Mid StBd : ${finalDraftMidStBd}`);
 
+  //Initial moyennes:
   const moyenneInitialDraftFore =
     (initialDraftForePort + initialDraftForeStBd) / 2;
   const moyenneInitialDraftAft =
@@ -127,39 +132,45 @@ calculerTrim();
 
 // calcul du lbm initial et lbm final
 var initialLbm; // variable global
+var finalLbm; // variable global
 const calculateLbm = () => {
+  // valeurs Initial draft des distances des drafts marks par rapport au perpendiculaires :
   const initialForeValue = parseFloat(initForDist.value);
   const initialAftValue = parseFloat(initAftDist.value);
   const lbpValue = parseFloat(lbp.value);
 
-  let calculatedLbmValue = lbpValue;
+  let initCalculatedLbmValue = lbpValue;
 
   switch (optInitialForeSelect.value) {
     case "A":
       if (optInitialAftSelect.value === "A") {
-        calculatedLbmValue = lbpValue + (initialAftValue - initialForeValue);
+        initCalculatedLbmValue =
+          lbpValue + (initialAftValue - initialForeValue);
       } else if (optInitialAftSelect.value === "F") {
-        calculatedLbmValue = lbpValue + (initialForeValue - initialAftValue);
+        initCalculatedLbmValue =
+          lbpValue + (initialForeValue - initialAftValue);
       } else if (optInitialAftSelect.value === "N/A") {
-        calculatedLbmValue = lbpValue - initialForeValue;
+        initCalculatedLbmValue = lbpValue - initialForeValue;
       }
       break;
     case "F":
       if (optInitialAftSelect.value === "A") {
-        calculatedLbmValue = lbpValue + (initialAftValue + initialForeValue);
+        initCalculatedLbmValue =
+          lbpValue + (initialAftValue + initialForeValue);
       } else if (optInitialAftSelect.value === "F") {
-        calculatedLbmValue = lbpValue + (initialForeValue - initialAftValue);
+        initCalculatedLbmValue =
+          lbpValue + (initialForeValue - initialAftValue);
       } else if (optInitialAftSelect.value === "N/A") {
-        calculatedLbmValue = lbpValue + initialForeValue;
+        initCalculatedLbmValue = lbpValue + initialForeValue;
       }
       break;
     case "N/A":
       if (optInitialAftSelect.value === "A") {
-        calculatedLbmValue += initialAftValue;
+        initCalculatedLbmValue += initialAftValue;
       } else if (optInitialAftSelect.value === "F") {
-        calculatedLbmValue -= initialAftValue;
+        initCalculatedLbmValue -= initialAftValue;
       } else if (optInitialAftSelect.value === "N/A") {
-        calculatedLbmValue = lbpValue;
+        initCalculatedLbmValue = lbpValue;
       }
       break;
       return { lbmInitial: initialLbm };
@@ -167,7 +178,47 @@ const calculateLbm = () => {
 
   // Display the calculated LBM value in the initialLbm input field
   initialLbm = document.getElementById("initial-lbm");
-  initialLbm.value = calculatedLbmValue.toFixed(2);
+  initialLbm.value = initCalculatedLbmValue.toFixed(2);
+
+  // valeurs Final draft des distances des drafts marks par rapport au perpendiculaires :
+  const finalForeValue = parseFloat(finalForDist.value);
+  const finalAftValue = parseFloat(finalAftDist.value);
+  let finalCalculatedLbmValue = lbpValue;
+
+  switch (optFinalForeSelect.value) {
+    case "A":
+      if (optFinalAftSelect.value === "A") {
+        finalCalculatedLbmValue = lbpValue + (finalAftValue - finalForeValue);
+      } else if (optFinalAftSelect.value === "F") {
+        finalCalculatedLbmValue = lbpValue + (finalForeValue - finalAftValue);
+      } else if (optFinalAftSelect.value === "N/A") {
+        finalCalculatedLbmValue = lbpValue - finalForeValue;
+      }
+      break;
+    case "F":
+      if (optFinalAftSelect.value === "A") {
+        finalCalculatedLbmValue = lbpValue + (finalAftValue + finalForeValue);
+      } else if (optFinalAftSelect.value === "F") {
+        finalCalculatedLbmValue = lbpValue + (finalForeValue - finalAftValue);
+      } else if (optFinalAftSelect.value === "N/A") {
+        finalCalculatedLbmValue = lbpValue + finalForeValue;
+      }
+      break;
+    case "N/A":
+      if (optFinalAftSelect.value === "A") {
+        finalCalculatedLbmValue += finalAftValue;
+      } else if (optFinalAftSelect.value === "F") {
+        finalCalculatedLbmValue -= finalAftValue;
+      } else if (optFinalAftSelect.value === "N/A") {
+        finalCalculatedLbmValue = lbpValue;
+      }
+      break;
+      return { lbmFinal: finalLbm };
+  }
+
+  // Display the calculated LBM value in the finalLbm input field
+  finalLbm = document.getElementById("final-lbm");
+  finalLbm.value = finalCalculatedLbmValue.toFixed(2);
 };
 // calculateLbm();
 // Ajout de l'événement sur le bouton btnCalc
