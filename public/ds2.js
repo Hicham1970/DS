@@ -220,61 +220,57 @@ const calculateLbm = () => {
   finalLbm = document.getElementById("final-lbm");
   finalLbm.value = finalCalculatedLbmValue.toFixed(2);
 };
-// calculateLbm();
+
+// Fonction pour calculer l'initialForecorrected
+function calculDraftCorrected(moyenneDraft, trimObs, lbm, dist, optDist) {
+  if (lbm === 0) {
+    throw new Error("Attention le lbm doit être different de Zero");
+  }
+
+  let draftCorrected = 0;
+
+  switch (optDist) {
+    case "A":
+      if (trimObs > 0) {
+        draftCorrected = moyenneDraft - (trimObs * dist) / lbm;
+      } else if (trimObs < 0) {
+        draftCorrected = moyenneDraft + (trimObs * moyenneDraft) / lbm;
+      } else {
+        draftCorrected = moyenneDraft;
+      }
+      break;
+    case "F":
+      if (trimObs > 0) {
+        draftCorrected = moyenneDraft + (trimObs * dist) / lbm;
+      } else if (trimObs < 0) {
+        draftCorrected = moyenneDraft - (trimObs * moyenneDraft) / lbm;
+      } else {
+        draftCorrected = moyenneDraft;
+      }
+      break;
+    case "N/A":
+      draftCorrected = moyenneDraft;
+      break;
+    default:
+      draftCorrected = moyenneDraft;
+  }
+  console.log(`Résultat du calcul du draftCorrected : ${draftCorrected}`);
+  return draftCorrected;
+}
 // Ajout de l'événement sur le bouton btnCalc
 document.getElementById("btnCalc").addEventListener("click", async () => {
   console.log("Calcul en cours...");
   const moyennesDrafts = calculerMoyenneDrafts();
   const trim = calculerTrim();
   const lbm = calculateLbm();
-  const initialForecorrected = calculerInitialForecorrected(
-    moyennesDrafts.moyenneInitialDraftFore,
-    trim.trimInitial,
-    lbm.lbmInitial
+  const initialForecorrected = calculDraftCorrected(
+    moyenneInitialDraftFore,
+    trimInitialObserve,
+    lbm.lbmInitial,
+    initialForeValue,
+    optInitialAftSelect
   );
   console.log(`Résultat final : ${initialForecorrected}`);
-  console.log(`Initial LBM : ${initialLbm.value}`);
-  console.log(`Initial Obs Trim : ${trimInitial}`);
+  document.getElementById("initial-fore-corrected").value =
+    initialForecorrected;
 });
-// Fonction pour calculer l'initialForecorrected
-function calculerInitialForeCorrected(
-  moyenneInitialDraftFore,
-  trimInitial,
-  lbmInitial
-) {
-  if (lbmInitial === 0) {
-    throw new Error("initial lbm doit être different de Zero");
-  }
-
-  let initialForecorrected = 0;
-
-  if (trimInitial > 0) {
-    initialForecorrected =
-      moyenneInitialDraftFore +
-      (trimInitial * moyenneInitialDraftFore) / lbmInitial;
-  } else if (trimInitial < 0) {
-    initialForecorrected =
-      moyenneInitialDraftFore -
-      (trimInitial * moyenneInitialDraftFore) / lbmInitial;
-  } else {
-    initialForecorrected = moyenneInitialDraftFore;
-
-    console.log(
-      `Résultat du calcul de l'initialForecorrected : ${initialForecorrected}`
-    );
-    return initialForecorrected;
-  }
-  // Ajout de l'événement sur le bouton btnCalc
-  document.getElementById("btnCalc").addEventListener("click", async () => {
-    console.log("Calcul en cours...");
-    const moyennesDrafts = calculerMoyenneDrafts();
-    const trim = calculerTrim();
-    const lbm = calculateLbm();
-    const initialForecorrected = calculerInitialForecorrected(
-      moyennesDrafts.moyenneInitialDraftFore,
-      trim.trimInitial,
-      lbm.lbmInitial
-    );
-    console.log(`Résultat final : ${initialForecorrected}`);
-  });
-}
