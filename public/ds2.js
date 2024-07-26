@@ -61,20 +61,6 @@ function calculerMoyenneDrafts() {
     document.getElementById("final-draft-mid-stBd").value
   );
 
-  console.log("Valeurs des drafts :");
-  console.log(`Initial Draft Fore Port : ${initialDraftForePort}`);
-  console.log(`Initial Draft Fore StBd : ${initialDraftForeStBd}`);
-  console.log(`Initial Draft Aft Port : ${initialDraftAftPort}`);
-  console.log(`Initial Draft Aft StBd : ${initialDraftAftStBd}`);
-  console.log(`Initial Draft Mid Port : ${initialDraftMidPort}`);
-  console.log(`Initial Draft Mid StBd : ${initialDraftMidStBd}`);
-  console.log(`Final Draft Fore Port : ${finalDraftForePort}`);
-  console.log(`Final Draft Fore StBd : ${finalDraftForeStBd}`);
-  console.log(`Final Draft Aft Port : ${finalDraftAftPort}`);
-  console.log(`Final Draft Aft StBd : ${finalDraftAftStBd}`);
-  console.log(`Final Draft Mid Port : ${finalDraftMidPort}`);
-  console.log(`Final Draft Mid StBd : ${finalDraftMidStBd}`);
-
   //Initial moyennes:
   const moyenneInitialDraftFore =
     (initialDraftForePort + initialDraftForeStBd) / 2;
@@ -87,14 +73,6 @@ function calculerMoyenneDrafts() {
   const moyenneFinalDraftAft = (finalDraftAftPort + finalDraftAftStBd) / 2;
   const moyenneFinalDraftMid = (finalDraftMidPort + finalDraftMidStBd) / 2;
 
-  console.log("Moyennes des drafts :");
-  console.log(`Moyenne Initial Draft Fore : ${moyenneInitialDraftFore}`);
-  console.log(`Moyenne Initial Draft Aft : ${moyenneInitialDraftAft}`);
-  console.log(`Moyenne Initial Draft Mid : ${moyenneInitialDraftMid}`);
-  console.log(`Moyenne Final Draft Fore : ${moyenneFinalDraftFore}`);
-  console.log(`Moyenne Final Draft Aft : ${moyenneFinalDraftAft}`);
-  console.log(`Moyenne Final Draft Mid : ${moyenneFinalDraftMid}`);
-
   return {
     moyenneInitialDraftFore,
     moyenneInitialDraftAft,
@@ -105,8 +83,6 @@ function calculerMoyenneDrafts() {
   };
 }
 
-calculerMoyenneDrafts();
-// Fonctions pour le calcul du Trim observé:
 function calculerTrim() {
   // Appel de la fonction calculerMoyenneDrafts pour récupérer les moyennes des drafts
   const moyennesDrafts = calculerMoyenneDrafts();
@@ -134,7 +110,7 @@ calculerTrim();
 var initialLbm; // variable global
 var finalLbm; // variable global
 const calculateLbm = () => {
-  // valeurs Initial draft des distances des drafts marks par rapport au perpendiculaires :
+  // valeurs Initials des distances des drafts marks par rapport au perpendiculaires :
   const initialForeValue = parseFloat(initForDist.value);
   const initialAftValue = parseFloat(initAftDist.value);
   const lbpValue = parseFloat(lbp.value);
@@ -259,16 +235,55 @@ function calculDraftCorrected(moyenneDraft, trimObs, lbm, dist, optDist) {
 }
 // Ajout de l'événement sur le bouton btnCalc
 document.getElementById("btnCalc").addEventListener("click", async () => {
-  console.log("Calcul en cours...");
+  // Calcul des moyennes
   const moyennesDrafts = calculerMoyenneDrafts();
+  // affichage des moyennes:
+  document.getElementById("moyenne-init-draft-fore").value =
+    moyennesDrafts.moyenneInitialDraftFore.toFixed(2);
+  document.getElementById("moyenne-init-draft-aft").value =
+    moyennesDrafts.moyenneInitialDraftAft.toFixed(2);
+  document.getElementById("moyenne-init-draft-mid").value =
+    moyennesDrafts.moyenneInitialDraftMid.toFixed(2);
+  document.getElementById("moyenne-final-draft-fore").value =
+    moyennesDrafts.moyenneFinalDraftFore.toFixed(2);
+  document.getElementById("moyenne-final-draft-aft").value =
+    moyennesDrafts.moyenneFinalDraftAft.toFixed(2);
+  document.getElementById("moyenne-final-draft-mid").value =
+    moyennesDrafts.moyenneFinalDraftMid.toFixed(2);
+  // Calcul du trim Initial et Final
   const trim = calculerTrim();
+  const trimInitialObserve = document.getElementById("initial-obs-trim").value;
+  console.log(`the initial obs trim is :${trimInitialObserve}`);
+  const trimFinalObserve = document.getElementById("final-obs-trim").value;
+  console.log(`the final obs trim is :${trimFinalObserve}`);
+
+  //Calcul du Lbm Initial et Final
   const lbm = calculateLbm();
+  const initialLbm = document.getElementById("initial-lbm").value;
+  const finalLbm = document.getElementById("final-lbm").value;
+  //Distances par rapport aux perpendiculaires:
+  const initialForeValue = document.getElementById("initial-fore").value;
+  const initialAftValue = document.getElementById("initial-aft").value;
+  const initialMidValue = document.getElementById("initial-mid").value;
+  const finalForeValue = document.getElementById("final-fore").value;
+  const finalAftValue = document.getElementById("final-aft").value;
+  const finalMidValue = document.getElementById("final-mid").value;
+  // Positions des draft marks "A" en aft "F" Foreword:
+  const optInitialForeSelect = document.getElementById("opt-initial-fore");
+  const optInitialAftSelect = document.getElementById("opt-initial-aft");
+  const optInitialMidSelect = document.getElementById("opt-initial-mid");
+  const optFinalForeSelect = document.getElementById("opt-final-fore");
+  const optFinalAftSelect = document.getElementById("opt-final-aft");
+  const optFinalMidSelect = document.getElementById("opt-final-mid");
+
+  //Calcul des drafts corrigés
+
   const initialForecorrected = calculDraftCorrected(
-    moyenneInitialDraftFore,
+    moyennesDrafts.moyenneInitialDraftFore,
     trimInitialObserve,
-    lbm.lbmInitial,
+    initialLbm,
     initialForeValue,
-    optInitialAftSelect
+    optInitialForeSelect
   );
   console.log(`Résultat final : ${initialForecorrected}`);
   document.getElementById("initial-fore-corrected").value =
