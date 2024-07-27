@@ -19,9 +19,7 @@ const lbpValue = document.getElementById("lbp").value;
 
 // add an eventListener sur le click du btn btnCalc:
 
-// Fonctions de QuarteMean.js
 function calculerMoyenneDrafts() {
-  console.log("Calcul des moyennes des drafts...");
   // Code pour calculer les moyennes des drafts
   const initialDraftForePort = parseFloat(
     document.getElementById("initial-draft-fore-port").value
@@ -99,10 +97,9 @@ function calculerTrim() {
   // Affichage du trim initial observé
   document.getElementById("initial-obs-trim").value =
     trimInitialObserve.toFixed(2);
-  console.log(`the initial obs trim is :${trimInitialObserve}`);
+
   // Affichage du trim final observé
   document.getElementById("final-obs-trim").value = trimFinalObserve.toFixed(2);
-  console.log(`the final obs trim is :${trimFinalObserve}`);
 }
 calculerTrim();
 
@@ -229,7 +226,7 @@ function calculDraftCorrected(moyenneDraft, trimObs, lbm, dist, optDist) {
     default:
       draftCorrected = moyenneDraft;
   }
-  console.log(`Résultat du calcul du draftCorrected : ${draftCorrected}`);
+
   return draftCorrected;
 }
 // Ajout de l'événement sur le bouton btnCalc
@@ -252,9 +249,8 @@ document.getElementById("btnCalc").addEventListener("click", async () => {
   // Calcul du trim Initial et Final
   const trim = calculerTrim();
   const trimInitialObserve = document.getElementById("initial-obs-trim").value;
-  console.log(`the initial obs trim is :${trimInitialObserve}`);
+
   const trimFinalObserve = document.getElementById("final-obs-trim").value;
-  console.log(`the final obs trim is :${trimFinalObserve}`);
 
   //Calcul du Lbm Initial et Final
   const lbm = calculateLbm();
@@ -275,11 +271,6 @@ document.getElementById("btnCalc").addEventListener("click", async () => {
   const optFinalAftSelect = document.getElementById("opt-final-aft");
   const optFinalMidSelect = document.getElementById("opt-final-mid");
 
-  /**
-   * TODO
-   ** j'ai eu mon premier draft corrigé affiché correctement mais il faut revoir la formule
-   */
-
   //Calcul des drafts corrigés
   // initial Fore Corrected
   const initialForecorrected = calculDraftCorrected(
@@ -289,7 +280,6 @@ document.getElementById("btnCalc").addEventListener("click", async () => {
     initialForeValue,
     optInitialForeSelect.value
   );
-  console.log(`Résultat final : ${initialForecorrected}`);
   document.getElementById("initial-fore-corrected").value =
     initialForecorrected.toFixed(2);
   // final Fore Corrected
@@ -300,7 +290,7 @@ document.getElementById("btnCalc").addEventListener("click", async () => {
     finalForeValue,
     optFinalForeSelect.value
   );
-  console.log(`Résultat final : ${finalForecorrected}`);
+
   document.getElementById("final-fore-corrected").value =
     finalForecorrected.toFixed(2);
   // initial Aft Corrected
@@ -343,4 +333,20 @@ document.getElementById("btnCalc").addEventListener("click", async () => {
   );
   document.getElementById("final-mid-corrected").value =
     finalMidCorrected.toFixed(2);
+
+  //  Quarter Mean Initial State:
+
+  const initialQuarterMean =
+    (initialForecorrected + initialAftCorrected + 6 * initialMidCorrected) / 8;
+  console.log(initialQuarterMean);
+  document.getElementById("initial-quarter-mean").value =
+    initialQuarterMean.toFixed(2);
+
+  //  Quarter Mean Final State:
+
+  const finalQuarterMean =
+    (finalForecorrected + finalAftCorrected + 6 * finalMidCorrected) / 8;
+  console.log(finalQuarterMean);
+  document.getElementById("final-quarter-mean").value =
+    finalQuarterMean.toFixed(2);
 });
