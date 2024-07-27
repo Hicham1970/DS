@@ -12,12 +12,11 @@ const optFinalForeSelect = document.getElementById("opt-final-fore");
 const optFinalAftSelect = document.getElementById("opt-final-aft");
 const optFinalMidSelect = document.getElementById("opt-final-mid");
 
-/**Le LBP et le LBM */
+/**Le LBP: length between perpendiculars et le LBM: length between marks */
 const lbp = document.getElementById("lbp");
 const lbpValue = document.getElementById("lbp").value;
-// const finalLbm = document.getElementById("final-lbm");
-
-// add an eventListener sur le click du btn btnCalc:
+var initialLbm; // variable global
+var finalLbm; // variable global
 
 function calculerMoyenneDrafts() {
   // Code pour calculer les moyennes des drafts
@@ -103,9 +102,6 @@ function calculerTrim() {
 }
 calculerTrim();
 
-// calcul du lbm initial et lbm final
-var initialLbm; // variable global
-var finalLbm; // variable global
 const calculateLbm = () => {
   // valeurs Initials des distances des drafts marks par rapport au perpendiculaires :
   const initialForeValue = parseFloat(initForDist.value);
@@ -193,9 +189,7 @@ const calculateLbm = () => {
   finalLbm = document.getElementById("final-lbm");
   finalLbm.value = finalCalculatedLbmValue.toFixed(2);
 };
-// add setTime 2 second
 
-// Fonction pour calculer l'initialForecorrected
 function calculDraftCorrected(moyenneDraft, trimObs, lbm, dist, optDist) {
   if (lbm === 0) {
     throw new Error("Attention le lbm doit être different de Zero");
