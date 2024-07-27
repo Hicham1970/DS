@@ -196,6 +196,7 @@ const calculateLbm = () => {
   finalLbm = document.getElementById("final-lbm");
   finalLbm.value = finalCalculatedLbmValue.toFixed(2);
 };
+// add setTime 2 second
 
 // Fonction pour calculer l'initialForecorrected
 function calculDraftCorrected(moyenneDraft, trimObs, lbm, dist, optDist) {
@@ -220,8 +221,6 @@ function calculDraftCorrected(moyenneDraft, trimObs, lbm, dist, optDist) {
         draftCorrected = moyenneDraft + (trimObs * dist) / lbm;
       } else if (trimObs < 0) {
         draftCorrected = moyenneDraft - (trimObs * moyenneDraft) / lbm;
-      } else {
-        draftCorrected = moyenneDraft;
       }
       break;
     case "N/A":
@@ -276,16 +275,72 @@ document.getElementById("btnCalc").addEventListener("click", async () => {
   const optFinalAftSelect = document.getElementById("opt-final-aft");
   const optFinalMidSelect = document.getElementById("opt-final-mid");
 
-  //Calcul des drafts corrigés
+  /**
+   * TODO
+   ** j'ai eu mon premier draft corrigé affiché correctement mais il faut revoir la formule
+   */
 
+  //Calcul des drafts corrigés
+  // initial Fore Corrected
   const initialForecorrected = calculDraftCorrected(
     moyennesDrafts.moyenneInitialDraftFore,
     trimInitialObserve,
     initialLbm,
     initialForeValue,
-    optInitialForeSelect
+    optInitialForeSelect.value
   );
   console.log(`Résultat final : ${initialForecorrected}`);
   document.getElementById("initial-fore-corrected").value =
-    initialForecorrected;
+    initialForecorrected.toFixed(2);
+  // final Fore Corrected
+  const finalForecorrected = calculDraftCorrected(
+    moyennesDrafts.moyenneFinalDraftFore,
+    trimFinalObserve,
+    finalLbm,
+    finalForeValue,
+    optFinalForeSelect.value
+  );
+  console.log(`Résultat final : ${finalForecorrected}`);
+  document.getElementById("final-fore-corrected").value =
+    finalForecorrected.toFixed(2);
+  // initial Aft Corrected
+  const initialAftCorrected = calculDraftCorrected(
+    moyennesDrafts.moyenneInitialDraftAft,
+    trimInitialObserve,
+    initialLbm,
+    initialAftValue,
+    optInitialAftSelect.value
+  );
+  document.getElementById("initial-aft-corrected").value =
+    initialAftCorrected.toFixed(2);
+  // final Aft Corrected
+  const finalAftCorrected = calculDraftCorrected(
+    moyennesDrafts.moyenneFinalDraftAft,
+    trimFinalObserve,
+    finalLbm,
+    finalAftValue,
+    optFinalAftSelect.value
+  );
+  document.getElementById("final-aft-corrected").value =
+    finalAftCorrected.toFixed(2);
+  // Initial Mid corrected:
+  const initialMidCorrected = calculDraftCorrected(
+    moyennesDrafts.moyenneInitialDraftMid,
+    trimInitialObserve,
+    initialLbm,
+    initialMidValue,
+    optInitialMidSelect.value
+  );
+  document.getElementById("initial-mid-corrected").value =
+    initialMidCorrected.toFixed(2);
+  // Final Mid corrected:
+  const finalMidCorrected = calculDraftCorrected(
+    moyennesDrafts.moyenneFinalDraftMid,
+    trimFinalObserve,
+    finalLbm,
+    finalMidValue,
+    optFinalMidSelect.value
+  );
+  document.getElementById("final-mid-corrected").value =
+    finalMidCorrected.toFixed(2);
 });
