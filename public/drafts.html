@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Draft survey V.01t</title>
+        <link rel="stylesheet" href="outputs.css" />
+    </head>
+    <body class="w-full h-screen dark:bg-[#111111] dark:text-white">
+        <header>
+            <nav
+                class="flex justify-start px-6 mb-4 text-zinc-700 font-bold md:justify-end sm:justify-center border border-b-teal-200 shadow-md flex-nowrap ">
+                <img
+                    src="/img/LogoHg.png"
+                    class="w-12 h-12 mt-2 ml-3 fixed top-1 left-0 bg-transparent rounded-xl"
+                    alt="LogoHg" />
+                <a
+                    class="mx-3 ml-8 mt-4 mb-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
+                    href="#">Home</a>
+                <a
+                    class="mx-3 mt-4 mb-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
+                    href="#ObservedDrafts">Drafts Obs</a>
+                <a
+                    class="mx-3 mt-4 mb-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
+                    href="#">Contact</a>
+                <svg
+                    class="cursor-pointer mt-5 mx-4 w-6 h-6"
+                    id="soleil"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="black"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+            </nav>
+        </header>
+        <!--Debut page distances et Lbp-->
+        <div
+            class="flex flex-row  md:flex-col items-start justify-evenly gap-5 px-3 ">
+            <div
+                class="w-full flex-row md:w-1/2 lg:w-1/2 xl:w-1/2 classA border border-yellow-400 font-bold text-sm px-6 py-2 ">
+                <!--form distances et positions-->
+                <form>
+                    <div class="grid grid-cols-2  gap-3 ">
+                        <div>
+                            <label for="initial-fore"
+                                class="block text-xs">Distance FORE(m)</label>
+                            <input
+                                type="number"
+                                id="initial-fore"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                                value="2.03" />
+                            <select
+                                name="opt"
+                                id="opt-initial-fore"
+                                class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                                <option value="A">A</option>
+                                <option value="F">F</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="final-fore"
+                                class="block text-xs">Distance FORE(m)</label>
+                            <input
+                                type="number"
+                                id="final-fore"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                                value="0.2" />
+                            <select
+                                id="opt-final-fore"
+                                class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                                <option value="A">A</option>
+                                <option value="F">F</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="initial-aft"
+                                class="block text-xs">Distance AFT(m)</label>
+                            <input
+                                type="number"
+                                id="initial-aft"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                                value="1.95" />
+                            <select
+                                name="opt"
+                                id="opt-initial-aft"
+                                class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                                <option value="A">A</option>
+                                <option value="F">F</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="final-aft"
+                                class="block text-xs">Distance AFT(m)</label>
+                            <input
+                                type="number"
+                                id="final-aft"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                                value="0.00" />
+                            <select
+                                name="opt"
+                                id="opt-final-aft"
+                                class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                                <option value="A">A</option>
+                                <option value="F">F</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="initial-mid"
+                                class="block text-xs">Distance MID(m)</label>
+                            <input
+                                type="number"
+                                id="initial-mid"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                                value="0.00" />
+                            <select
+                                name="opt"
+                                id="opt-initial-mid"
+                                class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                                <option value="A">A</option>
+                                <option value="F">F</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+
+                            <div class="mx-2 mt-4">
+                                <label for="lbp"
+                                    class="block mx-3 text-xs">LBP(m)</label>
+                                <input
+                                    type="number"
+                                    id="lbp"
+                                    step="0.01"
+                                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="final-mid"
+                                class="block text-xs">Distance MID(m)</label>
+                            <input
+                                type="number"
+                                id="final-mid"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                                value="0.00" />
+                            <select
+                                name="opt"
+                                id="opt-final-mid"
+                                class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                                <option value="A">A</option>
+                                <option value="F">F</option>
+                                <option value="N/A">N/A</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="initial-lbm"
+                                class="block text-xs">Initial LBM(m)</label>
+                            <input
+                                type="number"
+                                id="initial-lbm"
+                                step="0.01"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-300 font-bold"
+                                value />
+                        </div>
+
+                        <div class="relative">
+                            <label for="final-lbm" class="block text-xs">Final
+                                LBM(m)</label>
+                            <input
+                                type="number"
+                                id="final-lbm"
+                                step="0.01"
+                                class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600 font-bold"
+                                value />
+                                <button
+                            type="button"
+                            id="btnCalc"
+                            class="text-red-600 border rounded-lg bg-zinc-700 shadow shadow-white drop-shadow-xl border-yellow-400 m-4 p-6">
+                            Cal !
+                            </button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            <div
+                class="w-full sm:w-[50%] md:w-1/2 lg:w-1/2 xl:w-1/2 classA border border-yellow-400 font-bold text-sm px-4 py-2">
+                <!--form Observed-->
+                <h2 class="text-lg mb-4 ml-3">Drafts Lues en m</h2>
+            <form class="space-y-6">
+                <div class="grid grid-cols-2 px-3  gap-3">
+                 <div>
+                    <label for="initial-draft-fore-port" class="block text-xs"
+                    >FORE PORT(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="initial-draft-fore-port"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="6.73"
+                    />
+                </div>
+                
+                <div>
+                    <label for="final-draft-fore-port" class="block text-xs"
+                    >FORE PORT(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="final-draft-fore-port"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="4.33"
+                    />
+                </div>
+                <div>
+                    <label for="initial-draft-fore-stBd" class="block text-xs"
+                    >FORE stBd(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="initial-draft-fore-stBd"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="6.95"
+                    />
+                </div>
+                <div>
+                    <label for="final-draft-fore-stBd" class="block text-xs"
+                    >FORE stBd(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="final-draft-fore-stBd"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="4.40"
+                    />
+                </div>
+                <div>
+                    <label for="initial-draft-aft-port" class="block text-xs"
+                    >AFT PORT(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="initial-draft-aft-port"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="9.00"
+                    />
+                </div>
+                <div>
+                    <label for="final-draft-aft-port" class="block text-xs"
+                    >AFT PORT(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="final-draft-aft-port"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="5.40"
+                    />
+                </div>
+                <div>
+                    <label for="initial-draft-aft-stBd" class="block text-xs"
+                    >AFT stBd(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="initial-draft-aft-stBd"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-300"
+                    value="9.12"
+                    />
+                </div>
+
+                <div>
+                    <label for="final-draft-aft-stBd" class="block text-xs"
+                    >AFT stBd(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="final-draft-aft-stBd"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="5.50"
+                    />
+                </div>
+                <!---->
+                <div>
+                    <label for="initial-draft-mid-port" class="block text-xs"
+                    >MID PORT(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="initial-draft-mid-port"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="8.03"
+                    />
+                </div>
+                <div>
+                    <label for="final-draft-mid-port" class="block text-xs"
+                    >MID PORT(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="final-draft-mid-port"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="5.20"
+                    />
+                </div>
+                <div>
+                    <label for="initial-draft-mid-stBd" class="block text-xs"
+                    >MID stBd(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="initial-draft-mid-stBd"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600 mb-8"
+                    value="7.95"
+                    />
+                </div>
+                <div>
+                    <label for="final-draft-mid-stBd" class="block text-xs"
+                    >MID stBd(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="final-draft-mid-stBd"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600 mb-5"
+                    value="5.30"
+                    />
+                </div>
+                <div class="py-4 mx-8">
+                    <label for="initial-draft-fore-port" class="block text-xs"
+                    >FORE PORT(m)</label
+                    >
+                    <input
+                    type="number"
+                    id="initial-draft-fore-port"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                    value="6.73"
+                    />
+                </div>                
+            </form>
+            </div>
+
+            
+        </div>
+
+            <script src="script.js"></script>
+        </body>
+    </html>

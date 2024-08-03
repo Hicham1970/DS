@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,114 +7,162 @@
     <link rel="stylesheet" href="outputs.css" />
   </head>
 
-  <body
-    class="bg-purple-200 w-full h-screen dark:bg-gray-700   flex flex-col">
-    <header class>
-      <div
-        class="bg-white dark:bg-[#111111] text-bold text-size-md W-full h-[68px] fixed z-50 top-0 right-0 left-0">
-        <nav
-          class="flex justify-start  px-6 mb-4 text-zinc-700 font-bold md:justify-end sm:justify-center flex-nowrap">
-          <img src="/img/LogoHg.png"
-            class="w-12 h-12 mt-2 fixed top-1 left-0 bg-transparent rounded-xl"
-            alt="LogoHg" />
-          <a
-            class="mx-3 ml-8 mt-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
-            href="#">Home</a2>
-          <a
-            class="mx-3 mt-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
-            href="#">About</a>
-          <a
-            class="mx-3 mt-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
-            href="#">Contact</a>
-          <svg class="cursor-pointer mt-5 mx-4 w-6 h-6" id="soleil"
-            xmlns="http://www.w3.org/2000/svg" fill="black"
-            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-          </svg>
-
-        </nav>
-      </div>
+  <body class="w-full h-screen dark:bg-[#111111] flex flex-col">
+    <header>
+      <nav
+        class="flex justify-start bg-zinc-500 px-6 mb-4 text-zinc-700 font-bold md:justify-end sm:justify-center flex-nowrap"
+      >
+        <img
+          src="/img/LogoHg.png"
+          class="w-12 h-12 mt-2 top-1 left-0 bg-transparent rounded-xl"
+          alt="LogoHg"
+        />
+        <a
+          class="mx-3 ml-8 mt-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
+          href="#"
+          >Home</a
+        >
+        <a
+          class="mx-3 mt-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
+          href="#ObservedDrafts"
+          >Drafts Obs</a
+        >
+        <a
+          class="mx-3 mt-4 sm:text-xl lg:text-2xl dark:text-zinc-300 dark:hover:text-orange-300 hover:text-green-300 border border-yellow-400 rounded-xl px-3 py-2 border-b-4 shadow-xl"
+          href="#"
+          >Contact</a
+        >
+        <svg
+          class="cursor-pointer mt-5 mx-4 w-6 h-6"
+          id="soleil"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="black"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+          />
+        </svg>
+      </nav>
     </header>
     <!--Page Principale debut-->
     <div class="flex flex-col min-h-screen pt-[69px]">
       <main
-        class="flex flex-col  top-[68px] left-0 right-0 bg-zinc-200  justify-start items-center w-full text-zinc-600  border border-zinc-800 shadow-lg  rounded-xl  dark:bg-zinc-950 dark:text-zinc-100 flex-grow ">
-        <div class="dark:bg-zinc-800 pt-8 mb-8 dark:text-white  rounded-lg">
-          <div class="flex p-14 mt-4 mb-5  md:justify-center">
+        class="flex flex-col top-[68px] left-0 right-0 bg-zinc-200 justify-start items-center w-full text-zinc-600 border border-zinc-800 shadow-lg rounded-xl dark:bg-zinc-950 dark:text-zinc-100 flex-grow"
+      >
+        <div class="dark:bg-zinc-800 pt-8 dark:text-white rounded-lg">
+          <div class="flex md:justify-center" id="InitFina">
             <!--initial & final-->
-            <div class="w-1/2 text-r  border-r-4  border-yellow-400  font-bold">
-              <span class="text-zinc-800 dark:text-yellow-400 ">INITIAL</span>
+            <div class="w-full border-yellow-400 font-bold">
+              <span class="text-zinc-800 dark:text-yellow-400">INITIAL</span>
             </div>
-            <div class="w-1/2 text-center">
-              <span
-                class="text-zinc-800 dark:text-yellow-400 font-bold  -ml-28">FINAL</span>
+            <div class="w-full border-yellow-400 font-bold">
+              <span class="text-zinc-800 dark:text-yellow-400 font-bold"
+                >FINAL</span
+              >
             </div>
-
-        </div>
+          </div>
           <form class="space-y-6">
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-2 mt-3 gap-3">
               <div>
-                <label for="initial-fore" class="block text-xs ">Distance
-                  FORE(m)</label>
-                <input type="number" id="initial-fore"
-                  class="w-1/2   p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
-                  value="2.03" />
-                <select name="opt" id="opt-initial-fore"
-                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                <label for="initial-fore" class="block text-xs"
+                  >Distance FORE(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-fore"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="2.03"
+                />
+                <select
+                  name="opt"
+                  id="opt-initial-fore"
+                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300"
+                >
                   <option value="A">A</option>
                   <option value="F">F</option>
                   <option value="N/A">N/A</option>
                 </select>
               </div>
               <div>
-                <label for="final-fore" class="block text-xs">Distance
-                  FORE(m)</label>
-                <input type="number" id="final-fore"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="0.2" />
-                <select id="opt-final-fore"
-                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                <label for="final-fore" class="block text-xs"
+                  >Distance FORE(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-fore"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="0.2"
+                />
+                <select
+                  id="opt-final-fore"
+                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300"
+                >
                   <option value="A">A</option>
                   <option value="F">F</option>
                   <option value="N/A">N/A</option>
                 </select>
               </div>
               <div>
-                <label for="initial-aft" class="block text-xs">Distance
-                  AFT(m)</label>
-                <input type="number" id="initial-aft"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="1.95" />
-                <select name="opt" id="opt-initial-aft"
-                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                <label for="initial-aft" class="block text-xs"
+                  >Distance AFT(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-aft"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="1.95"
+                />
+                <select
+                  name="opt"
+                  id="opt-initial-aft"
+                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300"
+                >
                   <option value="A">A</option>
                   <option value="F">F</option>
                   <option value="N/A">N/A</option>
                 </select>
               </div>
               <div>
-                <label for="final-aft" class="block text-xs">Distance
-                  AFT(m)</label>
-                <input type="number" id="final-aft"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="0.00" />
-                <select name="opt" id="opt-final-aft"
-                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                <label for="final-aft" class="block text-xs"
+                  >Distance AFT(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-aft"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="0.00"
+                />
+                <select
+                  name="opt"
+                  id="opt-final-aft"
+                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300"
+                >
                   <option value="A">A</option>
                   <option value="F">F</option>
                   <option value="N/A">N/A</option>
                 </select>
               </div>
               <div>
-                <label for="initial-mid" class="block text-xs">Distance
-                  MID(m)</label>
-                <input type="number" id="initial-mid"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="0.00" />
-                <select name="opt" id="opt-initial-mid"
-                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                <label for="initial-mid" class="block text-xs"
+                  >Distance MID(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-mid"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="0.00"
+                />
+                <select
+                  name="opt"
+                  id="opt-initial-mid"
+                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300"
+                >
                   <option value="A">A</option>
                   <option value="F">F</option>
                   <option value="N/A">N/A</option>
@@ -123,281 +170,399 @@
 
                 <div class="mx-2 mt-4">
                   <label for="lbp" class="block mx-3 text-xs">LBP(m)</label>
-                  <input type="number" id="lbp" step="0.01"
-                    class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600" />
+                  <input
+                    type="number"
+                    id="lbp"
+                    step="0.01"
+                    class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  />
                 </div>
               </div>
               <div>
-                <label for="final-mid" class="block text-xs">Distance
-                  MID(m)</label>
-                <input type="number" id="final-mid"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="0.00" />
-                <select name="opt" id="opt-final-mid"
-                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300">
+                <label for="final-mid" class="block text-xs"
+                  >Distance MID(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-mid"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="0.00"
+                />
+                <select
+                  name="opt"
+                  id="opt-final-mid"
+                  class="text-zinc-500 dark:text-zinc-800 dark:bg-orange-300"
+                >
                   <option value="A">A</option>
                   <option value="F">F</option>
                   <option value="N/A">N/A</option>
                 </select>
               </div>
               <div>
-                <label for="initial-lbm" class="block text-xs">Initial
-                  LBM(m)</label>
-                <input type="number" id="initial-lbm" step="0.01"
-                  class="w-1/2   p-1 bg-zinc-700 text-white dark:text-pink-300 font-bold "
-                  value />
-
+                <label for="initial-lbm" class="block text-xs"
+                  >Initial LBM(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-lbm"
+                  step="0.01"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-300 font-bold"
+                  value
+                />
               </div>
 
               <div>
-                <label for="final-lbm" class="block text-xs">Final
-                  LBM(m)</label>
-                <input type="number" id="final-lbm" step="0.01"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600 font-bold"
-                  value />
+                <label for="final-lbm" class="block text-xs"
+                  >Final LBM(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-lbm"
+                  step="0.01"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600 font-bold"
+                  value
+                />
               </div>
-
             </div>
             <button
               type="button"
               id="btnCalc"
-              class="text-red-600 mx-10 px-4 border rounded-lg bg-zinc-700 shadow shadow-white drop-shadow-xl absolute top-6 right-0 border-yellow-400">
-              Cal !
+              class="text-white dark:text-yellow-400 mx-10 px-6 border rounded-lg bg-zinc-700 shadow shadow-white drop-shadow-xl absolute top-6 right-0 border-yellow-400"
+            >
+              Calculer !
             </button>
           </form>
+        </div>
       </main>
-      
+
       <!--Page Principale fin-->
       <!--Page secondaire debut-->
+
       <div
-        class="drafts bg-zinc-200 flex-col justify-end items-center w-full text-zinc-600 font-bold border border-zinc-800 shadow-lg p-14 rounded-xl flex dark:bg-zinc-950 dark:text-zinc-100 ">
-        <div class="  p-4 rounded-lg">
+        class="drafts bg-zinc-200 flex flex-col justify-end items-center w-full text-zinc-600 font-bold border border-zinc-800 shadow-lg p-14 rounded-xl dark:bg-zinc-950 dark:text-zinc-100"
+      >
+        <div class="p-4 rounded-lg" id="ObservedDrafts">
           <h1 class="text-2xl font-bold dark:text-yellow-500">Drafts</h1>
           <h2 class="text-lg mb-4 ml-3">Drafts Lues en m</h2>
           <form class="space-y-6">
             <div class="grid grid-cols-2 gap-3">
               <div>
-                <label for="initial-draft-fore-port" class="block text-xs ">FORE
-                  PORT(m)</label>
-                <input type="number" id="initial-draft-fore-port"
-                  class="w-1/2   p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
-                  value="6.73" />
-
+                <label for="initial-draft-fore-port" class="block text-xs"
+                  >FORE PORT(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-draft-fore-port"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="6.73"
+                />
               </div>
               <div>
-                <label for="final-draft-fore-port" class="block text-xs">FORE
-                  PORT(m)</label>
-                <input type="number" id="final-draft-fore-port"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="4.33" />
-
+                <label for="final-draft-fore-port" class="block text-xs"
+                  >FORE PORT(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-draft-fore-port"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="4.33"
+                />
               </div>
               <div>
-                <label for="initial-draft-fore-stBd" class="block text-xs">FORE
-                  stBd(m)</label>
-                <input type="number" id="initial-draft-fore-stBd"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="6.95" />
-
+                <label for="initial-draft-fore-stBd" class="block text-xs"
+                  >FORE stBd(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-draft-fore-stBd"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="6.95"
+                />
               </div>
               <div>
-                <label for="final-draft-fore-stBd" class="block text-xs">FORE
-                  stBd(m)</label>
-                <input type="number" id="final-draft-fore-stBd"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="4.40" />
-
+                <label for="final-draft-fore-stBd" class="block text-xs"
+                  >FORE stBd(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-draft-fore-stBd"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="4.40"
+                />
               </div>
               <div>
-                <label for="initial-draft-aft-port" class="block text-xs">AFT
-                  PORT(m)</label>
-                <input type="number" id="initial-draft-aft-port"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="9.00" />
+                <label for="initial-draft-aft-port" class="block text-xs"
+                  >AFT PORT(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-draft-aft-port"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="9.00"
+                />
               </div>
               <div>
-                <label for="final-draft-aft-port" class="block text-xs">AFT
-                  PORT(m)</label>
-                <input type="number" id="final-draft-aft-port"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="5.40" />
-
+                <label for="final-draft-aft-port" class="block text-xs"
+                  >AFT PORT(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-draft-aft-port"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="5.40"
+                />
               </div>
               <div>
-                <label for="initial-draft-aft-stBd" class="block text-xs">AFT
-                  stBd(m)</label>
-                <input type="number" id="initial-draft-aft-stBd"
-                  class="w-1/2   p-1 bg-zinc-700 text-white dark:text-pink-300  "
-                  value="9.12" />
-
+                <label for="initial-draft-aft-stBd" class="block text-xs"
+                  >AFT stBd(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-draft-aft-stBd"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-300"
+                  value="9.12"
+                />
               </div>
 
               <div>
-                <label for="final-draft-aft-stBd" class="block text-xs">AFT
-                  stBd(m)</label>
-                <input type="number" id="final-draft-aft-stBd"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600 "
-                  value="5.50" />
+                <label for="final-draft-aft-stBd" class="block text-xs"
+                  >AFT stBd(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-draft-aft-stBd"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="5.50"
+                />
               </div>
               <!---->
               <div>
-                <label for="initial-draft-mid-port" class="block text-xs ">MID
-                  PORT(m)</label>
-                <input type="number" id="initial-draft-mid-port"
-                  class="w-1/2   p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
-                  value="8.03" />
+                <label for="initial-draft-mid-port" class="block text-xs"
+                  >MID PORT(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-draft-mid-port"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="8.03"
+                />
+              </div>
+              <div>
+                <label for="final-draft-mid-port" class="block text-xs"
+                  >MID PORT(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-draft-mid-port"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value="5.20"
+                />
+              </div>
+              <div>
+                <label for="initial-draft-mid-stBd" class="block text-xs"
+                  >MID stBd(m)</label
+                >
+                <input
+                  type="number"
+                  id="initial-draft-mid-stBd"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600 mb-8"
+                  value="7.95"
+                />
+              </div>
+              <div>
+                <label for="final-draft-mid-stBd" class="block text-xs"
+                  >MID stBd(m)</label
+                >
+                <input
+                  type="number"
+                  id="final-draft-mid-stBd"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600 mb-5"
+                  value="5.30"
+                />
+              </div>
 
+              <div>
+                <label for="initial-obs-trim" class="block text-xs mt-8"
+                  >Initial Ob Trim</label
+                >
+                <input
+                  type="number"
+                  id="initial-obs-trim"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="final-draft-mid-port" class="block text-xs">MID
-                  PORT(m)</label>
-                <input type="number" id="final-draft-mid-port"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value="5.20" />
-
+                <label for="final-obs-trim" class="block text-xs mt-8"
+                  >Final Ob Trim</label
+                >
+                <input
+                  type="number"
+                  id="final-obs-trim"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="initial-draft-mid-stBd" class="block text-xs">MID
-                  stBd(m)</label>
-                <input type="number" id="initial-draft-mid-stBd"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600 mb-8"
-                  value="7.95" />
-
+                <label for="moyenne-draft-fore" class="block text-xs mt-5"
+                  >Mean Fore Draft</label
+                >
+                <input
+                  type="number"
+                  id="moyenne-init-draft-fore"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="final-draft-mid-stBd" class="block text-xs">MID
-                  stBd(m)</label>
-                <input type="number" id="final-draft-mid-stBd"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600 mb-5"
-                  value="5.30" />
-              </div>
-
-              <div>
-                <label for="initial-obs-trim" class="block text-xs mt-8">Initial
-                  Ob Trim</label>
-                <input type="number" id="initial-obs-trim"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
-
+                <label for="moyenne-final-draft-fore" class="block text-xs mt-5"
+                  >Mean Fore Draft</label
+                >
+                <input
+                  type="number"
+                  id="moyenne-final-draft-fore"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="final-obs-trim" class="block text-xs mt-8">Final Ob
-                  Trim</label>
-                <input type="number" id="final-obs-trim"
-                  class="w-1/2 p-1 bg-zinc-700 text-white  dark:text-pink-400 border border-zinc-600"
-                  value />
-
+                <label for="moyenne-init-draft-aft" class="block text-xs mt-5"
+                  >Mean Aft Draft</label
+                >
+                <input
+                  type="number"
+                  id="moyenne-init-draft-aft"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="moyenne-draft-fore"
-                  class="block text-xs mt-5">Mean Fore Draft</label>
-                <input type="number" id="moyenne-init-draft-fore"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="moyenne-final-draft-aft" class="block text-xs mt-5"
+                  >Mean Aft Draft</label
+                >
+                <input
+                  type="number"
+                  id="moyenne-final-draft-aft"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="moyenne-final-draft-fore"
-                  class="block text-xs mt-5">Mean Fore Draft</label>
-                <input type="number" id="moyenne-final-draft-fore"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="moyenne-init-draft-mid" class="block text-xs mt-5"
+                  >Mean Mid Draft</label
+                >
+                <input
+                  type="number"
+                  id="moyenne-init-draft-mid"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="moyenne-init-draft-aft"
-                  class="block text-xs mt-5">Mean Aft Draft</label>
-                <input type="number" id="moyenne-init-draft-aft"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="moyenne-final-draft-mid" class="block text-xs mt-5"
+                  >mean Mid Draft</label
+                >
+                <input
+                  type="number"
+                  id="moyenne-final-draft-mid"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="moyenne-final-draft-aft"
-                  class="block text-xs mt-5">Mean Aft Draft</label>
-                <input type="number" id="moyenne-final-draft-aft"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="initial-fore-corrected" class="block text-xs mt-5"
+                  >Fore Corrected</label
+                >
+                <input
+                  type="number"
+                  id="initial-fore-corrected"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="moyenne-init-draft-mid"
-                  class="block text-xs mt-5">Mean Mid Draft</label>
-                <input type="number" id="moyenne-init-draft-mid"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="final-fore-corrected" class="block text-xs mt-5"
+                  >Fore Corrected</label
+                >
+                <input
+                  type="number"
+                  id="final-fore-corrected"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="moyenne-final-draft-mid"
-                  class="block text-xs mt-5">mean Mid Draft</label>
-                <input type="number" id="moyenne-final-draft-mid"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="initial-aft-corrected" class="block text-xs mt-5"
+                  >Aft Corrected</label
+                >
+                <input
+                  type="number"
+                  id="initial-aft-corrected"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="initial-fore-corrected"
-                  class="block text-xs mt-5">Fore Corrected</label>
-                <input type="number" id="initial-fore-corrected"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="final-aft-corrected" class="block text-xs mt-5"
+                  >Aft Corrected</label
+                >
+                <input
+                  type="number"
+                  id="final-aft-corrected"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="final-fore-corrected"
-                  class="block text-xs mt-5">Fore Corrected</label>
-                <input type="number" id="final-fore-corrected"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="initial-mid-corrected" class="block text-xs mt-5"
+                  >Mid Corrected</label
+                >
+                <input
+                  type="number"
+                  id="initial-mid-corrected"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="initial-aft-corrected"
-                  class="block text-xs mt-5">Aft Corrected</label>
-                <input type="number" id="initial-aft-corrected"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="final-mid-corrected" class="block text-xs mt-5"
+                  >Mid Corrected</label
+                >
+                <input
+                  type="number"
+                  id="final-mid-corrected"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="final-aft-corrected" class="block text-xs mt-5">Aft
-                  Corrected</label>
-                <input type="number" id="final-aft-corrected"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="initial-quarter-mean" class="block text-xs mt-5"
+                  >Quarter Mean</label
+                >
+                <input
+                  type="number"
+                  id="initial-quarter-mean"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
               <div>
-                <label for="initial-mid-corrected"
-                  class="block text-xs mt-5">Mid Corrected</label>
-                <input type="number" id="initial-mid-corrected"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
-              </div>
-              <div>
-                <label for="final-mid-corrected" class="block text-xs mt-5">Mid
-                  Corrected</label>
-                <input type="number" id="final-mid-corrected"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
-              </div>
-              <div>
-                <label for="initial-quarter-mean"
-                  class="block text-xs mt-5">Quarter Mean</label>
-                <input type="number" id="initial-quarter-mean"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
-              </div>
-              <div>
-                <label for="final-quarter-mean" class="block text-xs mt-5">Quarter Mean</label>
-                <input type="number" id="final-quarter-mean"
-                  class="w-1/2 p-1 bg-zinc-700  text-white dark:text-pink-400 border border-zinc-600"
-                  value />
+                <label for="final-quarter-mean" class="block text-xs mt-5"
+                  >Quarter Mean</label
+                >
+                <input
+                  type="number"
+                  id="final-quarter-mean"
+                  class="w-1/2 p-1 bg-zinc-700 text-white dark:text-pink-400 border border-zinc-600"
+                  value
+                />
               </div>
             </div>
-          </form>  
+          </form>
         </div>
       </div>
     </div>
-  </div>
-
-    
-
-      
-    
     <script src="script.js"></script>
     <script src="ds2.js"></script>
   </body>
-
-  </html>
+</html>
